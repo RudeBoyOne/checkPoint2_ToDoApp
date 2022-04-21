@@ -1,0 +1,131 @@
+/* imports */
+@import url(./_global.css);
+
+/* 1. Zerando estilização padrão */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 2. Estilização do body */
+.wrapperBody{
+    height: 100vh;
+    background-color: var(--fundobody);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 3. Estilização da navbar */
+.wrapperBody .box{
+    width: 100%;
+    padding: 20px 20px 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapperBody .box .navbar-brand{
+    margin: 0;
+    color: white;
+    font-size: 19pt;
+    font-weight: 500;
+}
+
+.wrapperBody .box .iconeTitulo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.wrapperBody .box #nomeUsuario{
+    display: flex;
+    align-items: center;
+}
+
+.wrapperBody .box #nomeUsuario h1 {
+    margin: 0;
+    color: white;
+}
+
+/* 4. Estilização card tarefas */
+
+.wrapperCard{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapperCard .card{
+    width: 50vw;
+}
+
+/* 4.1 Estilização cabeçalho card */
+.wrapperCard .card .card-header{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wrapperCard .card .card-header .inputAdiciona{
+    display: flex;
+    gap: 10px;    
+}
+
+
+/* 4.2 Estilização corpo card e as tarefas PENDENTES */
+.wrapperCard .card .list-group-item{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+div ul li .btn-outline-primary{
+    width: 26px;
+    height: 25px;
+    padding: 0;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start
+}
+
+.wrapperCard .card .itemBox{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 400;
+    font-size: large;
+}
+
+.wrapperCard .card .itemBox .arrumaData{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: center;
+}
+
+.wrapperCard .card .itemBox p{
+    margin: 0;
+    flex-grow: 1;
+    text-align: justify;
+}
+
+.delete{
+    cursor: pointer;
+    align-self: baseline;
+    align-self: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+/* 4.3 Estilização corpo card e as tarefas CONCLUÍDAS */
+div #completasTasks li div{
+    text-decoration-line: line-through;
+}

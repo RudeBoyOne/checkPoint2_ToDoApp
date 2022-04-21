@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="src/styles/index.css">
+        <link rel="stylesheet" href="src/styles/global.css">
+        <link rel="stylesheet" href="src/styles/bootstrap.min.css">
+        <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon">
+        
+        <title>to-Do App CheckPoint2</title>
+</head>
+<body>
+
+    <!-- Alert em caso de erro no login -->
+    <div class="alert alert-danger alertErroEscondido" id="divAlertError">
+        <p>
+          Usuário não existe!
+          <br>
+          Verifique os dados e tente novamente!
+        </p>
+        <button type="button" class="btn btn-danger" id="botaoAlertError">OK</button>
+     </div>
+
+     <!-- Estrutura page de login -->
+    <div class="wrapper">
+        <div class="caixaLeft ">
+            <div class="img ">
+                <img src="./src/img/pessoa-login.png" alt="pessoa anaotando uma nova tarefa">
+            </div>
+        </div>
+
+        <div class="caixaRight ">
+            <div class="caixaForm ">
+                <form action="#">
+                    <div class="form-header">
+                        <h1>To-Do App</h1>
+                        <h2>Acessar</h2>
+                    </div>
+        
+                    <fieldset id="fieldset">
+                        <div class="mb-3">
+                            <label  class="col-sm-2 col-form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmailLogin" placeholder="name@example.com">
+                        </div>
+        
+                        <div class="mb-3">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                              <input type="password" class="form-control" id="inputSenhaLogin" placeholder="mínimo 6 caracteres">
+                        </div>
+                    </fieldset>
+        
+                    <button type="submit" class="btn btn-primary col-10" id="botaoLogin" disabled>Bloqueado</button>
+        
+                </form>
+            </div>
+            <div class="linkFooter">
+                <a href="signup.html">
+                    Não possui conta? &#x1F447 
+                </a>
+                <a href="signup.html">
+                    Crie agora mesmo!
+                </a>
+            </div>
+        </div>
+
+    </div>    
+    <script src="./src/js/index.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+</body>
+</html> 

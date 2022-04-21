@@ -1,0 +1,157 @@
+/* Imports */
+@import url(./_global.css);
+
+/* 1. Zerando css padrão dp browser */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* position: relative; */
+}
+
+/* 2. Estilização corpo (body) do site */
+.wrapper{
+    height: 100vh;
+    background-color: var(--fundobody);
+    display: flex;
+}
+
+/* 2.1 Estilização caixa da esquerda */
+.caixaLeft{
+    background-color: var(--fundoCaixas);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixaLeft .img{
+    width: 60%;
+}
+
+.caixaLeft .img img{
+    width: 100%;
+}
+
+/* 2.2 Estilização caixa da direita */
+.caixaRight{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.caixaRight .caixaForm{
+    background-color: var(--fundoCaixas);
+    width: 70%;
+    height: 65%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+/* 3. Estilização fomulários */
+.caixaRight .caixaForm form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.caixaRight .caixaForm form .form-header{
+    text-align: center;
+}
+
+.caixaRight .caixaForm form .form-header h1{
+    font-size: 30pt;
+    font-weight: 600;
+    margin: 0;
+}
+
+.caixaRight .caixaForm form .form-header p{
+    margin: 0;
+    font-size: 15pt;
+    font-weight: 600;
+}
+
+.caixaRight .caixaForm form fieldset{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* 3.1 Estilização específica para o formulário de login */
+#fieldset{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.caixaRight .caixaForm form fieldset .mb-3{
+    margin-bottom: 1px!important;
+}
+
+.caixaRight .caixaForm form fieldset .mb-3 .col-form-label{
+    padding-bottom: 0;
+}
+
+.caixaRight .caixaForm form fieldset div .form-control{
+    width: 100%;
+}
+
+.wrapper .linkFooter{
+    text-align: center;
+    text-decoration: none;
+}
+
+.wrapper .linkFooter a{
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--links)    
+}
+
+/* 4. Estilização do alert de criação de usuário */
+
+
+body .alert{
+    width: 380px;
+    height: 100px;
+    padding: 10px;
+    position: absolute;
+    left: 35%;
+    top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    align-self: center;
+    text-align: center;
+}
+
+
+.alert p{
+    margin: 0;
+}
+
+/* 4.1 Escondendo os alerts  */
+body .alertSucessoEscondido{
+    display: none;
+}
+
+body .alertErroEscondido{
+    display: none;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/index.css">
+    <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/bootstrap.min.css">
+    <link rel="shortcut icon" href="src/img/favicon.png" type="image/x-icon">
+
+    <title>Singup</title>
+  </head>
+  <body>
+    
+    
+    <!-- Alert (escondido) de criação bem sucedida de um novo usuário  -->
+          <div class="alert alert-primary alertSucessoEscondido" id="divAlertSucess">
+              <p>
+                Usuário cadastrado com sucesso!
+              </p>
+              <button type="button" class="btn btn-primary" id="botaoAlertSucess">OK</button>
+         </div>
+
+          <div class="alert alert-danger alertErroEscondido" id="divAlertError">
+              <p>
+                Usuário não cadastrado!
+                <br>
+                Verifique os dados e tente novamente!
+              </p>
+              <button type="button" class="btn btn-danger" id="botaoAlertError">OK</button>
+         </div>
+
+
+
+  
+    <!-- Page com itens constantes -->
+    <div class="wrapper">
+      <div class="caixaLeft">
+        <div class="img">
+          <img src="src/img/pessoa-signup.png" alt="foto conceitual, uma mulher usando um celular de tamanho real">
+        </div>
+      </div>
+      
+      <div class="caixaRight">
+          <div class="caixaForm">
+
+              <form>
+                    <div class="form-header">
+                        <h1>To-Do App</h1>
+                        <p>cadastro</p>
+                    </div>
+                    <fieldset>
+                        <div class="mb-3">
+                            <label for= "inputNomeCadastro" class="col-form-label"> Nome: </label>
+                            <input type="text" id="inputNomeCadastro" class="form-control" >
+                        </div>
+              
+                        <div class="mb-3">
+                            <label for="inputSobrenomeCadastro" class= col-form-label"> Sobrenome: </label>
+                            <input type="text" id="inputSobrenomeCadastro" class="form-control" >
+                        </div>
+              
+                        <div class="mb-3">
+                            <label for="inputEmailCadastro" class="col-form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmailCadastro" placeholder="name@example.com">
+                        </div>
+              
+                        <div class="mb-3">
+                            <label for="inputSenhaCadastro" class="col-form-label">Senha</label>
+                            <input type="password" class="form-control" id="inputSenhaCadastro" placeholder="mínimo 6 caracteres">
+                        </div>
+                        
+                        <div class="mb-3">
+                          <label for="inputRepetirSenhaCadastro" class="col-form-label">Repetir senha:</label>
+                            <input type="password" class="form-control" id="inputRepetirSenhaCadastro" placeholder="confirme sua senha">
+                        </div>
+                    </fieldset>
+                    <div class="btn-lg d-grid col-11 mx-auto ">
+                      <button type="submit" class="btn btn-primary" id="botaoCriarContaCadastro" disabled>Bloqueado</button>  
+                    </div>
+                  </form>
+                </div>
+
+                <div class="linkFooter">
+                  <a href="index.html">Já possui conta? Acesse aqui &#x1F44D </a>
+                </div>
+      </div>
+            
+    </div>
+
+
+
+      <script src="src/js/signup.js" defer></script>
+      <script src="src/js/bootstrap.min.js"></script>
+</body>
+</html>

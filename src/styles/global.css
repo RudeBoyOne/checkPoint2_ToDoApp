@@ -1,0 +1,58 @@
+:root {
+    --fundobody: #f6f6f6;
+    --fundoCaixas: #ffffff;
+    --botaoEnable: #7898ff;
+    --botaoDesable: #747474;
+    --links: #0b5ed7;
+}
+
+/* Responsividade page login e cadastro */
+@media (max-width: 768px) {
+    .wrapper{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .caixaLeft{
+        width: 100vw;
+    }
+
+    .caixaLeft .img {
+        width: 20%;
+    }
+
+    .caixaRight{
+        width: 100vw;
+        height: 77%;
+    }
+
+    .caixaRight .caixaForm{
+        width: 50%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .wrapper{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .caixaLeft{
+        display: none;
+    }
+    
+    .caixaRight{
+        width: 100%;
+        height: 100%;
+    }
+
+    .caixaRight .caixaForm{
+        width: 60%;
+        height: 80%;
+    }
+
+    .linkFooter{
+        text-align: center;
+    }
+}
