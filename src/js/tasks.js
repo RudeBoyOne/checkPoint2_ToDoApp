@@ -56,42 +56,44 @@ function renderizaTarefasPendentes(tarefas){
         if(!tarefa.completed){
             let listadeTarefas = document.getElementById("listaTasks")
             let itemListaTarefas = document.createElement("li");
-            let botaoCompleta = document.createElement("button");
+            let botaoCompleta = document.createElement("a");
             let caixaTextoData = document.createElement("div")
             let textoTarefa = document.createElement("p");
             let dataTarefa = document.createElement("p");
-            let lixeira = document.createElement("div");
+            let lixeira = document.createElement("a");
             let calendar = document.createElement("div")
-            let iconeLixeira = `<svg width="20" height="20" fill="#dc3545" class="bi bi-trash2-fill" viewBox="0 0 14 14">
+            let iconeLixeira = `<svg width="24" height="24" fill="currentColor" class="bi bi-trash2-fill" viewBox="0 0 16 16">
             <path d="M2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225zm9.89-.69C10.966 2.214 9.578 2 8 2c-1.58 0-2.968.215-3.926.534-.477.16-.795.327-.975.466.18.14.498.307.975.466C5.032 3.786 6.42 4 8 4s2.967-.215 3.926-.534c.477-.16.795-.327.975-.466-.18-.14-.498-.307-.975-.466z"/>
           </svg>`
             let iconCalendar = `<svg width="16" height="16" fill="currentColor" class="bi bi-calendar4-event" viewBox="0 0 16 16">
             <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
             <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
           </svg>`
-            let iconCheck = `<svg width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 11 15">
-            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+            let iconCheck = `<svg width="24" height="24" fill="currentColor" class="bi bi-check2-square" viewBox="0 0 16 16">
+            <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
+            <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
           </svg>`
 
             let data = new Date(tarefa.createdAt);
             let dataFormatada = data.toLocaleDateString('pt-BR')
             
             itemListaTarefas.classList.add("list-group-item");
-            botaoCompleta.setAttribute("type", "button")
-            botaoCompleta.classList.add( "btn-outline-primary", "btn")
+            botaoCompleta.setAttribute("type", "button");
+            botaoCompleta.classList.add( "btn-outline-primary");
             botaoCompleta.innerHTML = iconCheck;
             textoTarefa.innerText = `${tarefa.description}`;
-            dataTarefa.innerText =  `${dataFormatada} |`;
+            dataTarefa.innerText =  `${dataFormatada}`;
             caixaTextoData.appendChild(textoTarefa);
             calendar.innerHTML = iconCalendar;
-            caixaTextoData.appendChild(calendar)
             calendar.appendChild( dataTarefa);
             calendar.classList.add("arrumaData")
             caixaTextoData.classList.add("itemBox");
             itemListaTarefas.appendChild(botaoCompleta);
             itemListaTarefas.appendChild(caixaTextoData);
+            itemListaTarefas.appendChild(calendar);
             lixeira.innerHTML = iconeLixeira;
-            lixeira.classList.add("delete")
+            lixeira.setAttribute("type", "butoon")
+            lixeira.classList.add("btn-outline-danger");
             lixeira.setAttribute("data-bs-toggle", "modal")
             lixeira.setAttribute("data-bs-target", "#modalExluiTarefa")
             itemListaTarefas.appendChild(lixeira);
@@ -120,31 +122,53 @@ function renderizaTarefasPendentes(tarefas){
 function renderizaTarefasConcluidas(tarefas){
     tarefas.forEach(tarefa => {
         if(tarefa.completed){
-            let listadeTarefas = document.getElementById("completasTasks")
+            let listadeTarefas = document.getElementById("completasTasks");
             let itemListaTarefas = document.createElement("li");
-            let caixaTexto = document.createElement("div")
+            let caixaTexto = document.createElement("div");
             let textoTarefa = document.createElement("p");
-            let buttonVoltar = document.createElement("button")
-            let iconRecarega = `<svg width="18" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 11 16">
+            let buttonVoltar = document.createElement("a");
+            let lixeira = document.createElement("a");
+            let iconRecarega = `<svg width="24" height="24" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 14">
             <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
             <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
-          </svg>`
+            </svg>`
+            let iconeLixeira = `<svg width="24" height="24" fill="currentColor" class="bi bi-trash2-fill" viewBox="0 0 16 16">
+            <path d="M2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225zm9.89-.69C10.966 2.214 9.578 2 8 2c-1.58 0-2.968.215-3.926.534-.477.16-.795.327-.975.466.18.14.498.307.975.466C5.032 3.786 6.42 4 8 4s2.967-.215 3.926-.534c.477-.16.795-.327.975-.466-.18-.14-.498-.307-.975-.466z"/>
+            </svg>`
+
 
 
             itemListaTarefas.classList.add("list-group-item");
             textoTarefa.innerText = `${tarefa.description}`;
             caixaTexto.appendChild(textoTarefa);
             buttonVoltar.innerHTML = iconRecarega;
-            buttonVoltar.classList.add("btn-outline-primary", "btn")
-            caixaTexto.appendChild(buttonVoltar)
+            buttonVoltar.setAttribute("type", "button")
+            buttonVoltar.classList.add("btn-outline-primary")
+            lixeira.innerHTML = iconeLixeira;
+            lixeira.setAttribute("type", "button");
+            lixeira.setAttribute("data-bs-toggle", "modal")
+            lixeira.setAttribute("data-bs-target", "#modalExluiTarefa")
+            lixeira.classList.add("btn-outline-danger")
             caixaTexto.classList.add("itemBox");
             itemListaTarefas.appendChild(caixaTexto);
+            itemListaTarefas.appendChild(lixeira)
+            itemListaTarefas.appendChild(buttonVoltar);
             listadeTarefas.appendChild(itemListaTarefas);
 
 
             buttonVoltar.addEventListener("click", () => {
                 marcarTarefaConcluidaOuPendente(tarefa, false);
             })
+
+            lixeira.addEventListener('click', (evento) => {
+
+                evento.target.id = tarefa.id
+                
+                botaoExcluiTarefa.addEventListener("click" , () =>{
+                    deletarTarefa(evento.target.id);
+                })
+
+            });
         }
 
     })
@@ -293,4 +317,3 @@ botaoSair.addEventListener('click', () =>{
     }, 4000)
 
 });
-

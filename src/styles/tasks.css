@@ -11,7 +11,6 @@
 
 /* 2. Estilização do body */
 .wrapperBody{
-    height: 100vh;
     background-color: var(--fundobody);
     display: flex;
     flex-direction: column;
@@ -27,11 +26,23 @@
     align-items: center;
 }
 
+#icon{
+    width: 25%;
+}
+
 .wrapperBody .box .navbar-brand{
     margin: 0;
     color: white;
-    font-size: 19pt;
-    font-weight: 500;
+    font-size: 20pt;
+    font-weight: 600;
+    padding-bottom: 0.4125rem;
+}
+
+.titleNavbar{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100px;
 }
 
 .wrapperBody .box .iconeTitulo{
@@ -61,7 +72,7 @@
 }
 
 .wrapperCard .card{
-    width: 50vw;
+    width: 65vw;
 }
 
 /* 4.1 Estilização cabeçalho card */
@@ -82,17 +93,21 @@
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 10px;
+    gap: 20px;
+    padding: 5px 0 5px 0;
 }
 
-div ul li .btn-outline-primary{
-    width: 26px;
-    height: 25px;
-    padding: 0;
-    border-radius: 50%;
-    align-items: center;
+div ul li .btn-outline-primary {
+    padding: 3px;
+    border-radius: 15%;
     display: flex;
-    justify-content: flex-start
+}
+
+div ul li .btn-outline-danger {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 15%;
+    display: flex;
 }
 
 .wrapperCard .card .itemBox{
@@ -100,19 +115,24 @@ div ul li .btn-outline-primary{
     justify-content: space-between;
     width: 100%;
     font-weight: 400;
+    gap: 10px;
     font-size: large;
+    align-items: center;
 }
 
-.wrapperCard .card .itemBox .arrumaData{
+.wrapperCard .card .arrumaData{
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    align-self: center;
+    gap: 5px;
+}
+
+.wrapperCard .card .arrumaData p{
+    margin: 0;
 }
 
 .wrapperCard .card .itemBox p{
     margin: 0;
-    flex-grow: 1;
     text-align: justify;
 }
 

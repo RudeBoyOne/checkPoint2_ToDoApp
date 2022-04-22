@@ -7,6 +7,17 @@
 }
 
 /* Responsividade page login e cadastro */
+@media (max-width: 900px) {
+    .caixaLeft{
+        width: 40%;
+    }
+    .caixaRight{
+        width: 60%;
+    }
+    .caixaRight .caixaForm{
+        width: 75%;
+    }
+}
 @media (max-width: 768px) {
     .wrapper{
         flex-direction: column;
@@ -27,8 +38,25 @@
     }
 
     .caixaRight .caixaForm{
-        width: 50%;
+        width: 45%;
         height: 100%;
+    }
+
+    .wrapperCard .card {
+        width: 95vw;
+    }
+
+    .wrapperBody .box{
+        gap: 20px;    
+    }
+
+    .wrapperBody .box .navbar-brand{
+        padding: 0;
+    }
+
+    .wrapperCard .card .arrumaData {
+        flex-direction: column;
+        font-size: smaller;
     }
 }
 
@@ -48,11 +76,29 @@
     }
 
     .caixaRight .caixaForm{
-        width: 60%;
+        width: 75%;
         height: 80%;
     }
 
     .linkFooter{
         text-align: center;
+    }
+
+    .wrapperCard .card {
+        width: 95vw;
+    }
+
+    .wrapperBody .box{
+        flex-direction: column;
+        gap: 20px;    
+    }
+
+    .wrapperBody .box .navbar-brand{
+        padding: 0;
+    }
+
+    .wrapperCard .card .arrumaData {
+        flex-direction: column;
+        font-size: smaller;
     }
 }
